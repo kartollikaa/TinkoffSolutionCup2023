@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="TinkoffCard">
+<!--        <attr name="skeleton_footer" format="boolean"/>-->
+        <attr name="flat" format="boolean"/>
+    </declare-styleable>
+</resources>
