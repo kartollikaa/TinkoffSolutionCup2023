@@ -12,8 +12,10 @@ import com.kartollika.myapplication.card.content.factory.ContentFactory
 import com.kartollika.myapplication.databinding.TinkoffWidthListItemBinding
 import com.kartollika.myapplication.databinding.VerticalListLayoutBinding
 
-internal class VerticalListFactory(
-) : ContentFactory<ContentType.VerticalList> {
+/**
+ * Контент типа VerticalList
+ */
+internal class VerticalListFactory : ContentFactory<ContentType.VerticalList> {
 
   private lateinit var binding: VerticalListLayoutBinding
 

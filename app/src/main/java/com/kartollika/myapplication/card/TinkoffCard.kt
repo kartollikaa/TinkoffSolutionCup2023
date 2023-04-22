@@ -21,6 +21,19 @@ import com.kartollika.myapplication.util.gone
 import com.kartollika.myapplication.util.visible
 
 
+/**
+ * Динамическая карточка для отображения различного контента внутри
+ * Работает по принципу SLOT API
+ * Есть 3 слота:
+ * [card_header_slot] – слот для заголовка. Его может не быть,
+ * поэтому ответственность за верхний отступ возлагается на контент, идущий следующим
+ * [card_content_slot] – слот для контента. Посредством фабрики
+ * контента [com.kartollika.myapplication.card.content.factory.ContentFactory] можно помещать
+ * сюда различные представления и легко поддерживать новые без влияния на другие
+ * [card_footer_slot] – слот для футера. Его может не быть. Почти всегда это кнопка.
+ * Если необходимо поддержать различные футеры, то это можно переделать
+ * по аналогии с контентом на паттерн "фабрица"
+ */
 class TinkoffCard @JvmOverloads constructor(
   context: Context, attrs: AttributeSet? = null
 ) : FrameLayout(context, attrs) {
@@ -41,6 +54,12 @@ class TinkoffCard @JvmOverloads constructor(
     setFlat(flat)
   }
 
+  /**
+   * Параметр flat влияет на внешний вид карточки (см. Figma Design)
+   * if (flat == false), то есть поднятие и фон тот, что задан в теме [cardBackgroundFlat]
+   * if (flat == true), то пропадает elevation и
+   * карточка становится цветом, указанным в теме [cardBackground]
+   */
   fun setFlat(flat: Boolean) {
     if (flat) {
       binding.root.cardElevation = 0f
@@ -54,6 +73,9 @@ class TinkoffCard @JvmOverloads constructor(
     invalidate()
   }
 
+  /**
+   * Метод для установления динамически контента
+   */
   fun setContent(contentType: ContentType) {
     // TODO проверять, что тот же contentType.
     //  Если другой, то очищать вьюшки. Если нет, то заменить существующую
@@ -69,7 +91,9 @@ class TinkoffCard @JvmOverloads constructor(
     factory.applyData(contentType)
   }
 
-  // Set footer or remove it if passed null
+  /**
+   * Метод для установления динамически хедера
+   */
   fun setHeader(header: Header?) {
     if (header == null) {
       binding.cardHeaderSlot.removeAllViews()
@@ -95,7 +119,9 @@ class TinkoffCard @JvmOverloads constructor(
     this.headerBinding = headerBinding
   }
 
-  // Set footer or remove it if passed null
+  /**
+   * Метод для установления динамически футера
+   */
   fun setFooter(footer: Footer?) {
     if (footer == null) {
       binding.cardFooterSlot.removeAllViews()

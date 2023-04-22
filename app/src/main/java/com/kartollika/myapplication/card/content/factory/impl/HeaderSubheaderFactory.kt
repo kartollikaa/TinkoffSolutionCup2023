@@ -7,8 +7,10 @@ import com.kartollika.myapplication.card.content.ContentType
 import com.kartollika.myapplication.card.content.factory.ContentFactory
 import com.kartollika.myapplication.databinding.HeaderSubheaderLayoutBinding
 
-internal class HeaderSubheaderFactory(
-) : ContentFactory<ContentType.HeaderSubheader> {
+/**
+ * Контент типа HeaderSubheader
+ */
+internal class HeaderSubheaderFactory : ContentFactory<ContentType.HeaderSubheader> {
 
   private lateinit var binding: HeaderSubheaderLayoutBinding
 

@@ -7,6 +7,9 @@ import com.kartollika.myapplication.card.content.ContentType
 import com.kartollika.myapplication.card.content.factory.ContentFactory
 import com.kartollika.myapplication.databinding.CellLayoutBinding
 
+/**
+ * Контент типа Cell
+ */
 internal class CellFactory : ContentFactory<ContentType.Cell> {
 
   private lateinit var binding: CellLayoutBinding

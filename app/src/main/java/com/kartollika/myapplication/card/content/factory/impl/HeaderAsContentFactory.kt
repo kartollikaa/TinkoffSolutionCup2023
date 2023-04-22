@@ -7,6 +7,9 @@ import com.kartollika.myapplication.card.content.ContentType
 import com.kartollika.myapplication.card.content.factory.ContentFactory
 import com.kartollika.myapplication.databinding.HeaderAsContentLayoutBinding
 
+/**
+ * Контент типа Header
+ */
 internal class HeaderAsContentFactory : ContentFactory<ContentType.Header> {
 
   private lateinit var binding: HeaderAsContentLayoutBinding

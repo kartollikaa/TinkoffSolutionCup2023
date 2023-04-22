@@ -15,6 +15,9 @@ import com.kartollika.myapplication.databinding.TinkoffSquareCellListItemBinding
 import com.kartollika.myapplication.list.decoration.SpacingItemDecoration
 import com.kartollika.myapplication.util.Screen
 
+/**
+ * Контент типа ScrollCards
+ */
 internal class ScrollCardsFactory : ContentFactory<ContentType.HorizontalScrollingCards> {
 
   private lateinit var binding: ScrollCardsLayoutBinding

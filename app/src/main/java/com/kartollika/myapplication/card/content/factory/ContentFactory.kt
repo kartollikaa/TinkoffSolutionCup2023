@@ -9,6 +9,9 @@ import com.kartollika.myapplication.card.content.factory.impl.HeaderSubheaderFac
 import com.kartollika.myapplication.card.content.factory.impl.ScrollCardsFactory
 import com.kartollika.myapplication.card.content.factory.impl.VerticalListFactory
 
+/**
+ * Базовый интерфейс фабрики для создания контента и применения к нему данных
+ */
 interface ContentFactory<in T> where T : ContentType {
   fun provideView(context: Context): View
   fun applyData(model: T)
