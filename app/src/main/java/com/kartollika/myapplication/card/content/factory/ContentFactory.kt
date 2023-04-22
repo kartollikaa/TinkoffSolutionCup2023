@@ -3,6 +3,7 @@ package com.kartollika.myapplication.card.content.factory
 import android.content.Context
 import android.view.View
 import com.kartollika.myapplication.card.content.ContentType
+import com.kartollika.myapplication.card.content.factory.impl.CellFactory
 import com.kartollika.myapplication.card.content.factory.impl.HeaderAsContentFactory
 import com.kartollika.myapplication.card.content.factory.impl.HeaderSubheaderFactory
 import com.kartollika.myapplication.card.content.factory.impl.ScrollCardsFactory
@@ -20,5 +21,6 @@ fun getContentFactoryByType(contentType: ContentType): ContentFactory<ContentTyp
     is ContentType.Header -> HeaderAsContentFactory()
     is ContentType.HorizontalScrollingCards -> ScrollCardsFactory()
     is ContentType.VerticalList -> VerticalListFactory()
+    is ContentType.Cell -> CellFactory()
   } as ContentFactory<ContentType>
 }

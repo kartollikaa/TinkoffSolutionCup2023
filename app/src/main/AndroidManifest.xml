@@ -11,8 +11,27 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.MyApplication"
-        tools:targetApi="31" >
-        <activity android:name="com.kartollika.myapplication.MainActivity"
+        tools:targetApi="31">
+        <activity
+            android:name="com.kartollika.myapplication.ComponentsActivity"
+            android:exported="true">
+            <!--<intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>-->
+        </activity>
+        <activity
+            android:name="com.kartollika.myapplication.PlaygroundActivity"
+            android:exported="true">
+            <!--<intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>-->
+        </activity>
+        <activity
+            android:name="com.kartollika.myapplication.ActivityHost"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

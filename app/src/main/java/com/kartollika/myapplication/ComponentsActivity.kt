@@ -3,13 +3,13 @@ package com.kartollika.myapplication
 import android.app.Activity
 import android.os.Bundle
 import android.widget.Toast
-import com.kartollika.myapplication.card.footer.Footer
 import com.kartollika.myapplication.card.TinkoffCard
 import com.kartollika.myapplication.card.content.ContentType
+import com.kartollika.myapplication.card.footer.Footer
 import com.kartollika.myapplication.card.header.Header
 import com.kartollika.myapplication.databinding.MainActivityBinding
 
-class MainActivity : Activity() {
+class ComponentsActivity : Activity() {
 
   private lateinit var binding: MainActivityBinding
 
@@ -97,6 +97,15 @@ class MainActivity : Activity() {
           onItemClickListener = {
             showNotificationAboutClick("Item $it clicked")
           }
+        )
+      )
+    }
+
+    binding.cardCell.apply {
+      setContent(
+        ContentType.Cell(
+          title = "Title",
+          description = "Description"
         )
       )
     }

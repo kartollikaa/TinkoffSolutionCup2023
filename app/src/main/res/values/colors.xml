@@ -10,4 +10,9 @@
 
     <color name="secondaryBackground">#08001024</color>
     <color name="textColorAccent">#428BF9</color>
+    <color name="textSecondary">#9299A2</color>
+    <color name="textPrimary">#333333</color>
+    <color name="backgroundHighlighted">#08000000</color>
+    <color name="cardBackgroundFlat">#F6F7F8</color>
+    <color name="cardBackground">#FFFFFF</color>
 </resources>

@@ -25,7 +25,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Header"
-            android:textAppearance="@style/Tinkoff.Header" />
+            android:textAppearance="@style/Tinkoff.Regular16" />
 
         <TextView
             android:id="@+id/subheader"
@@ -33,6 +33,6 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="4dp"
             android:text="Subeader"
-            android:textAppearance="@style/Tinkoff.Subheader" />
+            android:textAppearance="@style/Tinkoff.Regular13" />
     </LinearLayout>
 </LinearLayout>

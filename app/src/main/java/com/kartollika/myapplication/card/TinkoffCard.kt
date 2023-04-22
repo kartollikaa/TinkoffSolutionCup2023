@@ -1,11 +1,15 @@
 package com.kartollika.myapplication.card
 
 import android.content.Context
+import android.content.res.ColorStateList
+import android.content.res.TypedArray
 import android.util.AttributeSet
 import android.view.LayoutInflater
 import android.view.ViewGroup.LayoutParams.MATCH_PARENT
 import android.view.ViewGroup.LayoutParams.WRAP_CONTENT
-import androidx.cardview.widget.CardView
+import android.widget.FrameLayout
+import androidx.core.content.ContextCompat
+import com.kartollika.myapplication.R
 import com.kartollika.myapplication.card.content.ContentType
 import com.kartollika.myapplication.card.content.factory.getContentFactoryByType
 import com.kartollika.myapplication.card.footer.Footer
@@ -16,9 +20,10 @@ import com.kartollika.myapplication.databinding.TinkoffCardSkeletonBinding
 import com.kartollika.myapplication.util.gone
 import com.kartollika.myapplication.util.visible
 
+
 class TinkoffCard @JvmOverloads constructor(
   context: Context, attrs: AttributeSet? = null
-) : CardView(context, attrs) {
+) : FrameLayout(context, attrs) {
 
   private val binding: TinkoffCardSkeletonBinding
   private var footerBinding: TinkoffCardFooterButtonBinding? = null
@@ -28,6 +33,25 @@ class TinkoffCard @JvmOverloads constructor(
 
   init {
     binding = TinkoffCardSkeletonBinding.inflate(LayoutInflater.from(context), this, true)
+
+    val a: TypedArray = context.obtainStyledAttributes(attrs, R.styleable.TinkoffCard)
+    val flat = a.getBoolean(R.styleable.TinkoffCard_flat, false)
+    a.recycle()
+
+    setFlat(flat)
+  }
+
+  fun setFlat(flat: Boolean) {
+    if (flat) {
+      binding.root.cardElevation = 0f
+      val color = ContextCompat.getColor(context, R.color.cardBackgroundFlat)
+      binding.root.setCardBackgroundColor(ColorStateList.valueOf(color))
+    } else {
+      binding.root.cardElevation = 8f
+      val color = ContextCompat.getColor(context, R.color.cardBackground)
+      binding.root.setCardBackgroundColor(ColorStateList.valueOf(color))
+    }
+    invalidate()
   }
 
   fun setContent(contentType: ContentType) {
@@ -50,6 +74,7 @@ class TinkoffCard @JvmOverloads constructor(
     if (header == null) {
       binding.cardHeaderSlot.removeAllViews()
       binding.cardHeaderSlot.gone()
+      this.header = null
     } else {
       if (this.header == null) {
         addHeader()
@@ -75,6 +100,7 @@ class TinkoffCard @JvmOverloads constructor(
     if (footer == null) {
       binding.cardFooterSlot.removeAllViews()
       binding.cardFooterSlot.gone()
+      this.footer = null
     } else {
       if (this.footer == null) {
         addFooter()

@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ripple xmlns:android="http://schemas.android.com/apk/res/android"
-    android:color="#08000000">
+    android:color="@color/backgroundHighlighted">
     <item android:id="@android:id/mask">
         <shape android:shape="rectangle">
             <corners android:radius="8dp" />
-            <solid android:color="#26001024" />
+            <solid android:color="@color/secondaryBackground" />
         </shape>
     </item>
 
     <item>
         <shape android:shape="rectangle">
             <corners android:radius="8dp" />
-            <solid android:color="#08001024" />
+            <solid android:color="@color/secondaryBackground" />
         </shape>
     </item>
 </ripple>

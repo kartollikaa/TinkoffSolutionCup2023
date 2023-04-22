@@ -9,5 +9,18 @@
         style="@style/Tinkoff.Button"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Button"/>
+        android:text="Button" />
+
+    <View
+        android:layout_width="wrap_content"
+        android:layout_height="16dp" />
+
+    <Button
+        android:id="@+id/buttons_button2"
+        style="@style/Tinkoff.Button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:enabled="false"
+        android:text="Button" />
+
 </LinearLayout>

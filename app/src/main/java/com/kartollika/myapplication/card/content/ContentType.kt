@@ -38,4 +38,10 @@ sealed interface ContentType {
       val image: Int? = null,
     )
   }
+
+  data class Cell(
+    val title: String,
+    val description: String,
+    val image: Int? = null,
+  ) : ContentType
 }

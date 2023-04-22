@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -36,6 +37,7 @@
         <com.kartollika.myapplication.card.TinkoffCard xmlns:android="http://schemas.android.com/apk/res/android"
             android:id="@+id/cardHeaderSubheader"
             android:layout_width="match_parent"
+            app:flat="true"
             android:layout_height="wrap_content" />
 
         <com.kartollika.myapplication.card.TinkoffCard xmlns:android="http://schemas.android.com/apk/res/android"
@@ -50,6 +52,11 @@
 
         <com.kartollika.myapplication.card.TinkoffCard xmlns:android="http://schemas.android.com/apk/res/android"
             android:id="@+id/cardVerticalList"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <com.kartollika.myapplication.card.TinkoffCard xmlns:android="http://schemas.android.com/apk/res/android"
+            android:id="@+id/cardCell"
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
 
