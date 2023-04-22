@@ -20,8 +20,8 @@ interface ContentFactory<in T> where T : ContentType {
 @Suppress("UNCHECKED_CAST")
 fun getContentFactoryByType(contentType: ContentType): ContentFactory<ContentType> {
   return when (contentType) {
-    is ContentType.HeaderSubheader -> HeaderSubheaderFactory()
     is ContentType.Header -> HeaderAsContentFactory()
+    is ContentType.HeaderSubheader -> HeaderSubheaderFactory()
     is ContentType.HorizontalScrollingCards -> ScrollCardsFactory()
     is ContentType.VerticalList -> VerticalListFactory()
     is ContentType.Cell -> CellFactory()
